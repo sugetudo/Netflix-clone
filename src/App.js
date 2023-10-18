@@ -1,29 +1,28 @@
-import './App.css';
+import "./App.css";
+import Row from "./components/Row";
+import categories from "./api";
+import Banner from "./components/Banner";
+import Nav from "./components/Nav";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
-  );
-}
+      <div className="App">
+            <Nav />
+                  <Banner />
+                        {categories.map((category) => {
+                                return (
+                                          <Row
+                                                      key={category.name}
+                                                                  title={category.title}
+                                                                              path={category.path}
+                                                                                          isLarge={category.isLarge}
+                                                                                                    />
+                                                                                                            );
+                                                                                                                  })}
+                                                                                                                      </div>
+                                                                                                                        );
+                                                                                                                        }
 
-export default App;
+                                                                                                                        export default App;
+
+
